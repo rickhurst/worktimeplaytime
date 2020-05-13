@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Un-block distractions
+      blockinfile:
+        path: /etc/hosts
+        marker: "# {mark} ANSIBLE MANAGED BLOCK"
+        block: ""
+
