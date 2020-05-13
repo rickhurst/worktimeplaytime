@@ -27,11 +27,18 @@ def run():
     print('no file commands found')
 
   if run_commands:
+
+    print(args)
+
     if args:
       if args[0] == "worktime":
-        os.system('ansible-playbook /Users/rickhurst/apps/worktimeplaytime/worktime.yml') 
+        print('Worktime!')
+        output = os.popen('/usr/local/bin/ansible-playbook /Users/rickhurst/apps/worktimeplaytime/worktime.yml').read
+        print(output)
       if args[0] == "playtime":
-        os.system('ansible-playbook /Users/rickhurst/apps/worktimeplaytime/playtime.yml')
+        print('Playtime!')
+        output = os.popen('/usr/local/bin/ansible-playbook /Users/rickhurst/apps/worktimeplaytime/playtime.yml').read()
+        print(output)
     else:
       print("no args") 
 
