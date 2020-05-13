@@ -1,5 +1,6 @@
 ---
 - hosts: localhost
+  gather_facts: no
   tasks:
     - name: Block distractions
       blockinfile:
@@ -19,4 +20,5 @@
           127.0.0.1   www.instagram.com
           127.0.0.1   guardian.com
           127.0.0.1   guardian.co.uk
+      become: yes
 
